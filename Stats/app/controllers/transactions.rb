@@ -20,11 +20,13 @@ Stats::App.controllers :transactions do
   # end
   
   get :index do
-
+    @transactions = Transaction.all(:order => 'created_at desc')
+    render 'transactions/index'
   end
 
-  get :show do
-
+  get :show, :with => :id do
+    @transaction = Transaction.find_by_id(params[:id])
+    render 'transactions/show'
   end
 
 end
