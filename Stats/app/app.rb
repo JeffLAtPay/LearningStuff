@@ -6,6 +6,14 @@ module Stats
     register Padrino::Helpers
 
     enable :sessions
+    
+    get "/" do
+      "Hello!"
+    end
+    
+    get :about, :map => '/about_us' do
+      render :haml, "%p Blah Blah Blah"
+    end
 
     ##
     # Caching support
