@@ -14,12 +14,10 @@ source 'https://rubygems.org'
 gem 'rake'
 
 # Component requirements
-gem 'bcrypt-ruby', :require => 'bcrypt'
-gem 'slim'
+gem 'sass'
+gem 'haml'
 gem 'activerecord', '>= 3.1', :require => 'active_record'
 gem 'sqlite3'
-gem 'haml'
-gem 'shotgun'
 
 # Test requirements
 gem 'mocha', :group => 'test'

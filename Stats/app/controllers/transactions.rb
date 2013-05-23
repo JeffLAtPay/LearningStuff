@@ -25,7 +25,7 @@ Stats::App.controllers :transactions do
   end
 
   get :show, :with => :id do
-    @transaction = Transaction.find_by_id(params[:id])
+    @transaction = Transaction.find_by_title(params[:title])
     render 'transactions/show'
   end
 
