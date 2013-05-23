@@ -1,0 +1,54 @@
+ul class="nav nav-tabs"
+  li class="active" = link_to tag_icon(:list, pat(:list)), url(:transactions, :index)
+  li = link_to tag_icon(:plus, pat(:new)), url(:transactions, :new)
+
+div class="tabs-content"
+  table class="table table-striped table-hover table-condensed" id="list"
+    thead
+      tr
+        th class='header list-menu'
+          div class='dropdown'
+            a href='#' class='list-menu-toggle.dropdown-toggle dropdown-toggle' data-toggle='dropdown'
+              = tag_icon :magic
+              span class='caret'
+            ul class='list-menu dropdown-menu' role='dropdown'
+              li class='list-menu-wrapper' = link_to tag_icon(:check, pat(:select_all)), '#', :id => 'select-all', :class => 'list-menu-link'
+              li class='list-menu-wrapper list-menu-wrapper-disabled' = link_to tag_icon('check-empty', pat(:deselect_all)), '#', :id => 'deselect-all', :class => 'list-menu-link list-menu-link-disabled'
+              li class='list-menu-divider divider'
+              li class='list-menu-wrapper list-menu-wrapper-disabled'
+                = link_to tag_icon(:trash, pat(:delete_selected)), '#', :id => 'delete-selected', :class => 'list-menu-link list-menu-link-disabled'
+                div class='list-menu-popover-delete-selected popover right'
+                  div class='arrow'
+                  h3 class='popover-title' = pat(:delete_selected_title)
+                  div class='popover-content'
+                    - form_tag url(:transactions, :destroy_many), :method => :delete do
+                      = hidden_field_tag :transaction_ids, :'data-delete-many-ids' => true
+                      = submit_tag  pat(:delete), :class =>'list-menu-popover-delete-selected-btn btn btn-danger btn-small'
+                      div class='btn btn-small cancel' = pat(:cancel)
+        th class='header' = mat(:transaction, :id)
+        th class='header' = mat(:transaction, :title)
+        th class='header' = mat(:transaction, :body)
+        th class='header' = mat(:transaction, :created_at)
+        th class='header' = mat(:transaction, :updated_at)
+        th class='header list-row-action-header'
+
+    tbody
+      -@transactions.each do |transaction|
+        tr class='list-row'
+          td class='list-column list-selectable' = check_box_tag 'transaction_ids[]', :value => transaction.id, :class => 'list-selectable-checkbox'
+          td class='list-column' = transaction.id
+          td class='list-column' = transaction.title
+          td class='list-column' = transaction.body
+          td class='list-column' = time_ago_in_words transaction.created_at
+          td class='list-column' = time_ago_in_words transaction.updated_at
+          td class='list-column list-row-action'
+            div class='list-row-action-wrapper'
+              = link_to tag_icon(:edit), :href => url(:transactions, :edit, :id => transaction.id), :rel => :tooltip, :title => "#{pat(:edit)} transaction", :class => 'list-row-action-wrapper-link'
+              = link_to tag_icon(:trash), :rel => :tooltip, :title => "#{pat(:delete)} transaction", :class => 'list-row-action-delete-one list-row-action-wrapper-link'
+              div class='popover list-row-action-popover-delete-one left'
+                div class='arrow'
+                h3 class='popover-title' = pat(:delete, :model => "transaction")
+                div class='popover-content'
+                  - form_tag url(:transactions, :destroy, :id => transaction.id), :method => :delete do
+                    = submit_tag pat(:delete), :class =>'list-row-action-popover-delete-one-btn btn btn-danger btn-small'
+                    div class='btn btn-small cancel' = pat(:cancel)

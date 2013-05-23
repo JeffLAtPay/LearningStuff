@@ -1,3 +1,5 @@
+# app/views/transactions/_transaction.haml
+
 .transaction
 	.title= link_to transaction.title, url_for(:transactions, :show, :id => transaction)
 	.date= transaction.created_at
