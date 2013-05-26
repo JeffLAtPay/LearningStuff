@@ -1,8 +1,0 @@
-# app/views/transactions/show.haml
-- @title = @transaction.title
-#show
-	.transaction
-		.transaction= @transaction.title
-		.date= @transaction.created_at
-		.body= simple_format(@transaction.body)
-%p= link_to 'View all transactions', url_for(:transaction, :index)
