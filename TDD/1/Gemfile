@@ -1,7 +1,7 @@
 gem "sinatra"
 gem "sqlite3"
 gem "activerecord"
-gem "sinatria-activerecord"
+gem "sinatra-activerecord"
 gem "rspec"
 gem "autotest"
 gem "rack"
