@@ -1,0 +1,14 @@
+gem "sinatra"
+gem "sqlite3"
+gem "activerecord"
+gem "sinatria-activerecord"
+gem "rspec"
+gem "autotest"
+gem "rack"
+gem "rack-test"
+
+
+group :development do
+	gem "shotgun"
+	gem "tux"
+end

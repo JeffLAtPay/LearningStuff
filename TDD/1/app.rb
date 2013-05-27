@@ -1,6 +1,8 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 
+set :database, "sqlite3///blog.db"
+
 class Post < ActiveRecord::Base
 end
 
@@ -9,7 +11,7 @@ def reverse string
 end
 
 get '/' do
-  "Hello Joey!"
+  "Hello World"
 end
 
 post '/' do
