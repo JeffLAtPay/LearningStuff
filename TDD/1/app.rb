@@ -1,23 +1,19 @@
 require 'sinatra'
-require 'sinatra/activerecord'
 
-set :database, "sqlite3://#{Dir.pwd}/blogg.db"
+  def reload!
+    exec $0, *ARGV
+  end
 
-class Post < ActiveRecord::Base
-end
+  get '/' do
+    "Hello World"
+  end
 
-def reload!
-  exec $0, *ARGV
-end
-
-def reverse string
-  string.each_char.to_a.reverse.join
-end
-
-get '/' do
-  "Hello World"
-end
-
-post '/' do
-  reverse params[:str]
-end
+  post '/' do
+    reverse params[:str]            # needs HTML post input 
+  end                               # from the root URL path.
+                                  # Can use to run tests.
+  get '/about' do
+    "The framework for everything." 
+  end
+  
+  
