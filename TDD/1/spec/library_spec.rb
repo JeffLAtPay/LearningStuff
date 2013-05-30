@@ -44,7 +44,7 @@ describe "Library Object" do
     end
     
     it "gets a book by the title" do
-      @lib.get_book("Ender's Game").title eql "Ender's Game"
+      @lib.get_book("Ender's Game").title.should eql "Ender's Game"
     end
     
     it "accepts new books" do

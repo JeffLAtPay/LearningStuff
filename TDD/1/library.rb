@@ -24,4 +24,8 @@ class Library
     @books.select { |book| book.title == title }.first
   end
   
+  def add_book book
+    @books.push book
+  end
+  
 end
