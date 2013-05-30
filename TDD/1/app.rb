@@ -16,4 +16,8 @@ require 'sinatra'
     "The framework for everything." 
   end
   
+  not_found do
+    halt 404, 'Page not found.'
+  end
+  
   

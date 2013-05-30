@@ -8,7 +8,7 @@ describe Book do
   
   describe "#{new}" do
     it "returns a new book object"  do
-        @book.should.be an_instance_of Book
+        @book.should be_an_instance_of Book
     end
   end
 end

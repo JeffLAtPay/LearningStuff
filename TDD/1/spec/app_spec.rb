@@ -1,5 +1,6 @@
 require_relative '../app.rb'
 require 'rack/test'
+require 'spec_helper'
 
 set :environment, :test
 
@@ -17,7 +18,8 @@ describe 'Homepage tests:' do
   
   it "should show 404 messaging." do
     post "/no_real_route_404_message"
-    last_response.body.should not_be ok?
+    last_response.should_not be_ok
+    last_response.body.should == 'Page not found.'
   end
 end
 
@@ -26,7 +28,8 @@ describe 'About tests' do
   
   it "should load the about page" do
     get '/about'
-    last_response.body.should be_ok
+    last_response.should be_ok
+    last_response.body.should == "The framework for everything."
   end
 end
 
