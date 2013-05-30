@@ -1,0 +1,21 @@
+---
+- !ruby/object:Book
+  title: Ender's Game
+  author: Card
+  category: :scifi
+- !ruby/object:Book
+  title: The Great Gatsby
+  author: Fitzgerald
+  category: :classic
+- !ruby/object:Book
+  title: Oryx and Crake
+  author: Attwood
+  category: :scifi
+- !ruby/object:Book
+  title: ! 'A Legacy of Ashes: The History of the CIA'
+  author: Weiner
+  category: :nonfiction
+- !ruby/object:Book
+  title: Children of the Mind
+  author: Card
+  category: :scifi

@@ -23,7 +23,7 @@ describe 'Homepage tests:' do
   end
 end
 
-describe 'About tests' do
+describe 'About tests:' do
   include Rack::Test::Methods
   
   it "should load the about page" do
