@@ -1,7 +1,10 @@
 gem "sinatra"
 gem "sqlite3"
 gem "rspec"
+gem "ZenTest"
 gem "autotest"
+gem "autotest-fsevent"
+gem "autotest-growl"
 gem "rack"
 gem "rack-test"
 

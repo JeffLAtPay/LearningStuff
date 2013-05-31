@@ -9,9 +9,9 @@ require 'sinatra'
   end
 
   post '/' do
-    reverse params[:str]            # needs HTML post input 
-  end                               # from the root URL path.
-                                  # Can use to run tests.
+    reverse params[:str]            
+  end                               
+                                  
   get '/about' do
     "The framework for everything." 
   end
