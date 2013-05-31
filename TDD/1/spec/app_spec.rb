@@ -8,7 +8,7 @@ def app
   Sinatra::Application
 end
 
-describe 'Homepage tests:' do
+describe 'Homepage tests' do
   include Rack::Test::Methods
    
   it "should load the home page" do
@@ -23,7 +23,7 @@ describe 'Homepage tests:' do
   end
 end
 
-describe 'About tests:' do
+describe 'About tests' do
   include Rack::Test::Methods
   
   it "should load the about page" do
