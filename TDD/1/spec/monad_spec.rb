@@ -24,7 +24,7 @@ describe Monad do
     end
     
     it "should allow a monad's value to be passed around to diff functions." do
-       expect(@chain).to eql 11
+       @chain.value.should eql 11
     end
   end
 end

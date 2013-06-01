@@ -1,6 +1,8 @@
 class Monad
+  attr_reader :value
+  
     def initialize value
-      @v = value
+      @value = value
     end
     
     def unit value
@@ -8,7 +10,7 @@ class Monad
     end
     
     def bind function
-      self.unit function.call @v
+      self.unit function.call @value
     end
 end
 
