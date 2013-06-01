@@ -1,10 +1,14 @@
 class Monad
-  attr_accessor :good, :okay, :bad
-  
-    def initialize good, okay, bad
-      @good = good
-      @okay = okay
-      @bad = nil
+    def initialize value
+      @v = value
     end
     
+    def unit value
+      self.class.new value
+    end
+    
+    def bind function
+      self.unit function.call @v
+    end
 end
+
