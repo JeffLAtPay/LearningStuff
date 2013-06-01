@@ -1,5 +1,7 @@
 require 'spec_helper'
 
+require_relative '../book.rb'
+require 'spec_helper'
 describe Book do 
   
   before :each do

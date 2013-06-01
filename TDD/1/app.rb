@@ -2,7 +2,7 @@ require 'sinatra'
 
   def reload!
     exec $0, *ARGV
-  end
+  end  
 
   get '/' do
     "Hello World"

@@ -1,3 +1,4 @@
+require_relative '../library.rb'
 require 'spec_helper'
 
 describe "Library Object" do
