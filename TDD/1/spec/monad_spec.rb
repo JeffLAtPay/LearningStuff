@@ -5,13 +5,13 @@ describe Monad do
   
   before :each do
     @f1 = lambda {|x| x+1  }
-    @f2 = lambda {|y| y+10  }
-    @monad = Monad.new(0)
+    @f2 = lambda {|x| x+10  }
+    @monad = Monad.new 0
   end
   
   describe "#new" do
      
-    it "should throw an argument error if not passed a value." do
+    it "should throw an argument error if not passed a argument." do
       lambda { monad = Monad.new }.should raise_exception ArgumentError
     end
     
