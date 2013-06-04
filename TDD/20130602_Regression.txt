@@ -1,0 +1,56 @@
+URL: https://staging.atpay.com/pay_pages/126BF990-BD62-4B31-A3E5-D79EA0550FE0/registrations
+
+Exception:
+-------------------------------
+Routing Error
+
+No route matches [GET] "/pay_pages/126BF990-BD62-4B31-A3E5-D79EA0550FE0/registrations"
+Try running rake routes for more information on available routes.
+
+-------------------------------
+
+During SOP regression testing, I put in a bad CVN for a legit CC, forgetting that we don't do strict checks for CVNs on staging. After clicking submit with all other form fields filled out w/ good info, I got bounced to the extra security site for staging. (The site w/ the robot and the easy password) After putting in email/pw, takes me to an exception page w/ a routing error.
+
+
+
+
+rake blast_tool[create-security-keys-for-blast-uuid-and-member-uuid,'<E6951012-7EB6-44DD-9D03-5A6B987E8061>','<C8BD6406-A555-4B0C-ABAE-24CE7B0DA065>']
+
+
+===========================================================
+
+Mail Delivery Subsystem <mailer-daemon@googlemail.com>
+8:38 PM (0 minutes ago)
+
+to me 
+Delivery to the following recipient failed permanently:
+
+    transaction@payment.atpay.com
+
+Technical details of permanent failure:
+DNS Error: Domain name not found
+
+----- Original message -----
+
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=mime-version:date:message-id:subject:from:to:content-type;
+        bh=DbxKNkjtGtvbzpdIkrtxqtIoLkCS0feW4Nm08rk93us=;
+        b=e0iGIrKPjLrFD0PZBkAT3QLX33wp5oHDn1pAYa0fS8eDnXKkTbUmnXqTs9AmeWiU0n
+         BjlnSfvVwCKwtRtSZo5CC+qP2zywK8Oc/F8k39ru5g69q9TnlpeOrTZg9YjRxRQr4yt2
+         /jDjqNBqAm3eqRihB0Glg9QjPDJLd17DI4gRcROSBchMp1DQ70t0ctCnNVidDn9FhzUu
+         6uBMBj3xz8qnMJRXmlQP8bS/gVDqUKAolp85f89xup8t1GTlMIcVjd2ZSCTqIFAvUlv4
+         KYbqYd4Ek6d2suYabiElmyfW7Z5X/SELVKCUYMxgevSph6WjG4qX41iE6Ydc/RJVVG7Z
+         zzQw==
+MIME-Version: 1.0
+X-Received: by 10.194.171.65 with SMTP id as1mr16824782wjc.40.1370227133174;
+ Sun, 02 Jun 2013 19:38:53 -0700 (PDT)
+Received: by 10.194.79.71 with HTTP; Sun, 2 Jun 2013 19:38:53 -0700 (PDT)
+Date: Sun, 2 Jun 2013 20:38:53 -0600
+Message-ID: <CAJVUMOPeACnjYFQ0n3Q2jEcHOOsMzvY_twbqcoi7tFT2Vjq00w@mail.gmail.com>
+Subject: transaction test
+From: Atpay Tester <test.easygive2@gmail.com>
+To: transaction@payment.atpay.com
+Content-Type: multipart/alternative; boundary=089e0122f1a288d79104de36dd82
+
+31FAA301-4759-4877-A3BF-551F65B011B2

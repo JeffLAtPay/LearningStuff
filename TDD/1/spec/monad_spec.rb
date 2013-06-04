@@ -4,8 +4,8 @@ require 'spec_helper'
 describe Monad do
   
   before :each do
-    @f1 = lambda {|x| x+1  }
-    @f2 = lambda {|x| x+10  }
+    @f1 = lambda {|x| x + 1  }
+    @f2 = lambda {|x| x + 10  }
     @monad = Monad.new 0
   end
   

@@ -1,20 +1,18 @@
-Module Arraymon
+class Newmon 
+  attr_reader :value
+  
+    def initialize value
+      @value = value
+    end
 
-  #Identity function
-  I = lambda {|x| x }
+    def unit value
+       self.class.new [value]
+    end
   
-  #Structure preserving transformaiton to apply the
-  #given function across the whole environment.
-  def map
-    lambda {|f| bind[lambda {|x| sefl.class.unit[f[x]] }]}
-  end
-  
-  #Joins nested monads into one environment by applying 
-  #the ID function.
-  def flatten
-    bind[I]
-  end
-  
-  def apply
-    lambda {|x|  }
+    def bind function
+      self.unit value.map {|value| function.call(@value)}.flatten 
+    end
+end
+
+
      
