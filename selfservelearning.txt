@@ -1,0 +1,77 @@
+============================================================================
+ActiveRecord Model Stuff
+============================================================================
+
+#an example model with a one to one relationship. one book has one subject.
+
+class Book < ActiveRecord::Base
+	belongs_to: subject
+end
+
+#an example model with a one to many relationship. one subject can have many books.
+class Subject < ActiveRecord::Base
+	has_many: books
+end
+
+#validations ensure user input or data in the DB matches the expected model. example will only accept user/stored data that has a title and checks that the price is composed of numeric characters.
+
+class Book < ActiveRecord::Base
+	belongs_to: subject
+	validates_presence_of: title
+	validates_numericality_of: price, :message=>"Error Message"
+end
+
+=============================================================================
+Rails Migrations
+=============================================================================
+Rails command to make migrations:
+
+ruby script/generate migration table_name
+
+#will create the file db/migrate/001_table_name.rb (001 b/c its the 1st migration)
+#migration files contain basic ruby syntax that describes the data structure of the DB table.
+
+
+they create, drop, rename tables.
+they add, rename, change and remove columns
+they add, remove index columns
+
+they support all basic data types which are strings, text, integers, floats(decimals), datetime/timestamps, date and time (whats the difference?), binary(images,audio,video), boolean.
+
+example column options
+	:limit=>"50"
+	:default=>"blah"
+	:null => false implies NOT NULL
+	
+example migration file:
+
+class Books < ActiveRecord::Migration
+	def self.up
+		create_table :books do |t|
+			#don't need a column for id b/c its automatically created.
+			t.column :title, :string, :limit => 32, :null => false
+			t.column :price, :float #means the price will be a decimal.
+			t.column :subject_id, :integer
+			t.column :description, :text
+			t.column :created_at, :timestamp
+		end
+	end
+	
+	def self.down
+		drop_table :books
+	end
+end
+
+============================================================================
+Run the migration
+============================================================================
+command to run all new migrations:
+
+
+
+
+
+
+
+
+
