@@ -1,0 +1,66 @@
+http://www.youtube.com/watch?v=rVC7I5VcTiw -- Webside is down sales guy vs web dude.
+
+====================================================================================================
+
+Glen is noticing problems with cybersource_response_helper.
+
+# require 'mocha/setup' -- what is mocha? 
+	
+	Its a test framework running on "node??" and the browser, making asynchronous testing simple... Mocha tests run "serially"?
+
+"module" -- don't fully understand this term yet.
+
+comments in the file: "# TODO: We're mixing rr and mocha somewhere because of our test-unit upgrade.
+  # This is a nasty setup for mocks and stubs, so openstructs rule here."
+
+So.... what are openstructs?
+
+====================================================================================================
+
+staging.atpay.com/admin
+
+admin@example.com
+samsamsam
+
+====================================================================================================
+
+ARM Follow Up blast UUID for 6/18:
+
+8AB7EEEC-BBE9-4EF7-B916-89334F3730D4
+
+====================================================================================================
+
+Notes on testing new admin:
+
+New transaction button can't create a new transaction. No method error for new transaction. I think this is a good thing. admins shouldn't be able to make a new transaction unless they're paying.
+
+Can admin really edit a transaction to make it recurring?!
+
+Is there anything illegal/not best practice about being able to edit the sale price of a transaction after the fact???
+
+Should probably change "Fat Stacks" to be more representative of financial data... perhaps "Cash Money"
+
+The "Batch Actions" button on the "cybersource transactions" tab is greyed out.
+
+In Disbursement Batch tab, is this the correct output for "disbursement batch"
+
+Should add functionality for Bank Name object.
+
+The char limit for "Legal name" in the "edit partner" view is really short. Lots of people have longer names than 22 characters.
+
+No regex for editing URL in "Edit partner". can put in gibberish. should have regex for an actual domain name at least?
+
+No validation for non-numeric data in the phone number field for "edit partner"
+
+Do we really want last sign in data on the member tab? IDK... 
+
+I'm gonna stop... Summary of notes: 
+
+This update gives us the most admin functionality we've ever had. A big improvement over old admin. All the functionality of old admin is there and more... (the partners tab for instance)There are some capabilities that concern me if our site is compromised. Theres too much CRUD functionality for too many things. We shouldn't be able to alter some of the options in there. I think at most we should be able to void transactions if cybersource flags it. 
+
+
+
+
+
+
+

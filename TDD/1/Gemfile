@@ -1,5 +1,6 @@
 gem "sinatra"
 gem "sqlite3"
+gem "sequel"
 gem "rspec"
 gem "ZenTest"
 gem "autotest"
